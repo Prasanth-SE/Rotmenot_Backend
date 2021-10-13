@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Endpoints Base Route
 app.use('/v1/auth', appRouter.authRouter);
-
+app.use('/v1/ingredient', passportMiddleWare.jwtAuth, appRouter.ingredientRouter);
 // admin endpoint base routes
 
 // catch 404 and forward to error handler
