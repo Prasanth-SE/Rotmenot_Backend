@@ -10,8 +10,5 @@ const express = require('express');
  const editIngredient = require('../../components/v1/ingredient/edit');
 
  router.get('/list/all', listAllIngredients);
- router.post('/add', joiMiddleware.joiBodyMiddleware(joiSchemas.addIngredient), addIngredient);
- router.post('/edit', joiMiddleware.joiBodyMiddleware(joiSchemas.editIngredient), editIngredient);
-
-
- module.exports = router;
+ router.post('/add', adminMiddleware.isAdmin(), joiMiddleware.joiBodyMiddleware(joiSchemas.addIngredient), addIngredient);
+ router.post('/edit', adminMiddleware.isAdmin(), joiMiddleware.joiBodyMiddleware(joiSchemas.editIngredient), editIngredient);
