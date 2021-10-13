@@ -1,0 +1,26 @@
+To install mongodb in local (Mac)
+
+1ÊInstall mongodb using ->
+    a. sudo chown -R $(whoami) $(brew --prefix)/*
+    b. brew tap mongodb/brew
+    c. brew install mongodb-community
+The mongo conf will be at (/usr/local/etc/mongod.conf). The mongodb path will be at /usr/local/var/mongodb
+2. To start mongo db -> brew services start mongodb-community
+
+------------------------------------------------------------------------------------------
+
+Install robo 3t from https://robomongo.org/download and use the button that says Download Robo 3T
+
+------------------------------------------------------------------------------------------
+
+For running seeds use the below command
+
+1. Supplement seeds -> npm run seed:supplements
+
+
+------------------------------------------------------------------------------------------
+
+Run in local dev
+
+npm run start:dev
+

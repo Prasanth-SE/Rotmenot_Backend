@@ -1,0 +1,6 @@
+[
+    {
+      "name": "espresso-stg-backend",
+      "imageUri": "598063126635.dkr.ecr.us-west-2.amazonaws.com/espresso-stg-backend:latest"
+    }
+  ]
