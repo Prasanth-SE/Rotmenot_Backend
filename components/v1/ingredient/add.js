@@ -14,11 +14,11 @@
          let ingredientBody = {};
          ingredientBody.name =ingredientName;
          await db.Ingredient.create(ingredientBody);
-
+         const ingredients = await db.Ingredient.find().sort({ "updatedAt": -1 });
          return res.success({
-             Message: 'Ingredient added successfully'
+             Message: 'Ingredient added successfully',
+             ingredients
          });
      } catch (error) {
-         return res.serverError(500, ErrorHandler(error));
-     }
+         return res.serverError(500, ErrorHandler(error));    }
  }
