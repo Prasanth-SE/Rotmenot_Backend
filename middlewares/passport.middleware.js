@@ -31,8 +31,6 @@ passport.use(
         if (user) {
           if (bcrypt.compareSync(password, user.password)) {
             user = user.toJSON();
-            const user_collection = await db.UserCollection.find({display_type: "core-product", user: user._id}).countDocuments();
-            user['hasProducts'] = user_collection > 0;
             const tokens = generateTokens(user);
             return done(null, {
               user,
@@ -94,8 +92,6 @@ passport.use(
           email: decodedPayload.email,
         });
         let userJSON = user.toJSON()
-        const user_collection = await db.UserCollection.find({display_type: "core-product", user: userJSON._id}).countDocuments();
-        userJSON['hasProducts'] = user_collection > 0;
         const tokens = generateTokens(userJSON);
         return done(null, {
           user:userJSON,
