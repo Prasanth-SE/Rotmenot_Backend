@@ -42,17 +42,15 @@ const mongoose = require('mongoose');
             enum: ["pending", "published", "rejected"],
             default: "pending"
         },
-        publishedBy: [{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }],
-        submittedBy: [{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }],
-     comments: [{
-         name: String,
-         comment: String
+        publishedBy: {
+            type: String
+        },
+        submittedBy: {
+            type: String
+        },
+        comments: [{
+            name: String,
+            comment: String
      }]
  }, {
      timestamps: true
