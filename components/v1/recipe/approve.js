@@ -31,6 +31,10 @@
 
          const recipe = await db.Recipe.findOne({ _id: body.id }).populate("ingredients");
 
+         let submiter = await db.User.findOne({ _id: recipe.submittedBy });
+         submiter.submit_points += 1;
+         submiter.save();
+
          return res.success({
              Message: 'Recipe approved successfully',
              recipe
