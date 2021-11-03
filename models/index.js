@@ -2,6 +2,7 @@
 //const db = require("./models");
 
 module.exports = {
-    User: require("./user")
-    Ingredient: require("./ingredient")
+    User: require("./user"),
+    Ingredient: require("./ingredient"),
+    Recipe: require("./recipe")
 };
