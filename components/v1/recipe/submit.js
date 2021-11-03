@@ -23,14 +23,14 @@
          recipeBody.cuisineId = body.cuisineId;
          recipeBody.timeToPrepare = body.timeToPrepare;
          recipeBody.cost = body.cost;
-         recipeBody.status = "published";
+         recipeBody.status = "pending";
          recipeBody.submittedBy = user._id;
-         recipeBody.publishedBy = user._id;
          recipeBody.comments = body.comments;
+
          const result = await db.Recipe.create(recipeBody);
          const recipe = await db.Recipe.findOne({ _id: result._id }).populate("ingredients");
          return res.success({
-             Message: 'Recipe added successfully',
+             Message: 'Recipe submitted successfully',
              recipe
          });
      } catch (error) {
