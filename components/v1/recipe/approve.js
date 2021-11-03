@@ -25,7 +25,7 @@
              cuisineId: body.cuisineId,
              timeToPrepare: body.timeToPrepare,
              cost: body.cost,
-             publishedBy: user._id,
+             publishedBy: user.first_name,
              comments: body.comments
          });
 

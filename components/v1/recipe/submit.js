@@ -24,7 +24,7 @@
          recipeBody.timeToPrepare = body.timeToPrepare;
          recipeBody.cost = body.cost;
          recipeBody.status = "pending";
-         recipeBody.submittedBy = user._id;
+         recipeBody.submittedBy = user.first_name;
          recipeBody.comments = body.comments;
 
          const result = await db.Recipe.create(recipeBody);

@@ -24,11 +24,12 @@
          recipeBody.timeToPrepare = body.timeToPrepare;
          recipeBody.cost = body.cost;
          recipeBody.status = "published";
-         recipeBody.submittedBy = user._id;
-         recipeBody.publishedBy = user._id;
+         recipeBody.submittedBy = user.first_name;
+         recipeBody.publishedBy = user.first_name;
          recipeBody.comments = body.comments;
+
          const result = await db.Recipe.create(recipeBody);
-         const recipe = await db.Recipe.findOne({ _id: result._id }).populate("ingredients");
+        const recipe = await db.Recipe.findOne({ _id: result._id }).populate("ingredients");
          return res.success({
              Message: 'Recipe added successfully',
              recipe
