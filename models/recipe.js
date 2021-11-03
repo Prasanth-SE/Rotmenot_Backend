@@ -36,11 +36,20 @@ const mongoose = require('mongoose');
      },
      cost: {
          type: String
-     },
-     status: {
-         type: String,
-         enum: ["pending", "published", "rejected"]
-     },
+        },
+        status: {
+            type: String,
+            enum: ["pending", "published", "rejected"],
+            default: "pending"
+        },
+        publishedBy: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }],
+        submittedBy: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }],
      comments: [{
          name: String,
          comment: String
