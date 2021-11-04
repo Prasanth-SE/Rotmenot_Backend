@@ -7,6 +7,7 @@ const _ = require('lodash');
 const User = new Schema({
     first_name: { type: String },
     last_name: { type: String },
+    submit_points: { type: Number, default: 0},
     email: { type: String, required: true, unique: true },
     terms_agreed_at: { type: Date },
     password: { type: String },

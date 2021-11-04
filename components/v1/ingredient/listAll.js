@@ -1,10 +1,10 @@
 "use strict";
- const {
-     ErrorHandler
- } = require("../../../lib/utils");
- const db = require("../../../models");
+const {
+    ErrorHandler
+} = require("../../../lib/utils");
+const db = require("../../../models");
 
- module.exports = async (req, res, next) => {
+module.exports = async (req, res, next) => {
     try {
         // Get user
         const user = req.user;
@@ -12,8 +12,8 @@
 
         return res.success({
             ingredients
-                 });
-     } catch (error) {
-         return res.serverError(500, ErrorHandler(error));
-     }
- };
+        });
+    } catch (error) {
+        return res.serverError(500, ErrorHandler(error));
+    }
+};

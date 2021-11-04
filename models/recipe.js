@@ -51,10 +51,18 @@ const Recipe = new Schema({
         enum: ["pending", "published", "rejected"],
         default: "pending"
     },
-    publishedBy: {
+    publishedBy: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    submittedBy: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    publishedUser: {
         type: String
     },
-    submittedBy: {
+    submittedUser: {
         type: String
     },
     comments: [{

@@ -19,21 +19,22 @@ module.exports = async (req, res, next) => {
         }).countDocuments();
         if (sameEmailUserCount > 0) {
             return res.serverError(422, ErrorHandler(new Error(constants.error.auth.emailTaken)));
-         }
+        }
 
-         const adminAccessEmails = ['jmallipeddi@albany.edu', 'jithendramallipeddi8@gmail.com', 'xliu24@albany.edu', 'lxq565710288@gmail.com', 'pnagisetty@albany.edu','prasanthnagisetty1995@gmail.com','mmiryala@albany.edu','manisha.miryala01@gmail.com','lokhandwalapooja@gmail.com','plokhandwala@albany.edu'];
-         for (let i=1; i<100; i++){
-             adminAccessEmails.push('admin' + i + '@rotmenot.com');
-         }
+        const adminAccessEmails = ['jmallipeddi@albany.edu', 'jithendramallipeddi8@gmail.com', 'xliu24@albany.edu', 'lxq565710288@gmail.com', 'pnagisetty@albany.edu','prasanthnagisetty1995@gmail.com','mmiryala@albany.edu','manisha.miryala01@gmail.com','lokhandwalapooja@gmail.com','plokhandwala@albany.edu'];
+        for (let i=1; i<100; i++){
+            adminAccessEmails.push('admin' + i + '@rotmenot.com');
+        }
 
-         // Create a new user with date sent from api
-         const body = req.body.user;
-         if (adminAccessEmails.indexOf(req.body.user.email) > -1) {
-             body.role = "admin";
-         }
-         body.terms_agreed_at = DateTime.now().toJSDate();
-         body.verification_token = Math.floor(1000 + Math.random() * 9000);
-         const user = await db.User.create(body);
+        // Create a new user with date sent from api
+        const body = req.body.user;
+        if (adminAccessEmails.indexOf(req.body.user.email) > -1) {
+            body.role = "admin";
+        }
+        body.terms_agreed_at = DateTime.now().toJSDate();
+        body.verification_token = Math.floor(1000 + Math.random() * 9000);
+        const user = await db.User.create(body);
+
 
         let userJSON = user.toJSON();
         //Generate access tokens
