@@ -17,7 +17,7 @@ module.exports = async (req, res, next) => {
             let count = recipe.ratingCount;
             rating = rating*count;
             count++
-            const updatedRating = ((rating+body.rating)/count);
+            const updatedRating = count === 0 ? body.rating : ((rating+body.rating)/count);
             await db.Recipe.findOneAndUpdate({
                 _id: body.id
             },{
