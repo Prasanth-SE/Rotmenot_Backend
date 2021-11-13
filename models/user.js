@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const { bcryptConfig } = require('../config');
 const _ = require('lodash');
-
+// token Authentication mechanism
 const User = new Schema({
     first_name: { type: String },
     last_name: { type: String },
