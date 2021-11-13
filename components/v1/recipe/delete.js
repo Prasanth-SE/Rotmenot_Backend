@@ -23,6 +23,8 @@ module.exports = async (req, res, next) => {
             Message: 'Recipe deleted successfully'
         });
     } catch (error) {
+
         return res.serverError(500, ErrorHandler(error));
+
     }
 };
