@@ -21,7 +21,7 @@ module.exports = async (req, res, next) => {
             return res.serverError(422, ErrorHandler(new Error(constants.error.auth.emailTaken)));
         }
 
-        const adminAccessEmails = ['jmallipeddi@albany.edu', 'jithendramallipeddi8@gmail.com', 'xliu24@albany.edu', 'lxq565710288@gmail.com', 'pnagisetty@albany.edu','prasanthnagisetty1995@gmail.com','mmiryala@albany.edu','manisha.miryala01@gmail.com','lokhandwalapooja@gmail.com','plokhandwala@albany.edu'];
+        const adminAccessEmails = ['jmallipeddi@albany.edu', 'jithendramallipeddi8@gmail.com', 'xliu24@albany.edu', 'lxq565710288@gmail.com', 'pnagisetty@albany.edu','prasanthnagisetty1995@gmail.com','mmiryala@albany.edu','manisha.miryala01@gmail.com','shyamnyathani@gmail.com','snyathani@albany.edu','lokhandwalapooja@gmail.com','plokhandwala@albany.edu'];
         for (let i=1; i<100; i++){
             adminAccessEmails.push('admin' + i + '@rotmenot.com');
         }
