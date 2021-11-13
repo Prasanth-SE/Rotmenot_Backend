@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const {fa} = require("faker/lib/locales");
 const Schema = mongoose.Schema;
-
+// Db attributes
 const Recipe = new Schema({
     name: {
         type: String,
@@ -23,10 +23,10 @@ const Recipe = new Schema({
     img: {
         type: String
     },
-    calories: {
+     calories: {
         type: String
     },
-    description: {
+     description: {
         type: String
     },
     ratings: {
@@ -55,14 +55,14 @@ const Recipe = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
-    submittedBy: [{
+     submittedBy: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
     publishedUser: {
         type: String
     },
-    submittedUser: {
+     submittedUser: {
         type: String
     },
     comments: [{
