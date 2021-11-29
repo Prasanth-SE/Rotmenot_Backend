@@ -18,6 +18,7 @@ module.exports = async (req, res, next) => {
             ingredients: body.ingredients,
             isHealthy: body.isHealthy,
             img: body.img,
+            video: body.video,
             calories: body.calories,
             description: body.description,
             ratings: body.ratings,

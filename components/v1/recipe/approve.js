@@ -15,13 +15,15 @@ module.exports = async (req, res, next) => {
             _id: body.id
         },{
             status: "published",
+            publishedBy: user._id,
+            publishedUser: user.first_name
         });
 
         const recipe = await db.Recipe.findOne({ _id: body.id }).populate("ingredients");
 
-        // let submiter = await db.User.findOne({ _id: recipe.submittedBy });
-        // submiter.submit_points += 1;
-        // submiter.save();
+        let submitter = await db.User.findOne({ _id: recipe.submittedBy });
+        submitter.submit_points += 1;
+        submitter.save();
 
         return res.success({
             Message: 'Recipe approved successfully',

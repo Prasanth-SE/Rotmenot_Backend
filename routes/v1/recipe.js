@@ -4,7 +4,7 @@ const router = express.Router();
 const joiMiddleware = require('../../middlewares/joi.middleware');
 const adminMiddleware = require('../../middlewares/admin.middleware');
 const joiSchemas = require('../../lib/utils/joi.schemas');
-// buttons
+
 const addRecipe = require('../../components/v1/recipe/add');
 const rateRecipe = require('../../components/v1/recipe/rate');
 const listAllRecipes = require('../../components/v1/recipe/listAll');

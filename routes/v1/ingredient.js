@@ -9,7 +9,6 @@ const addIngredient = require('../../components/v1/ingredient/add');
 const listAllIngredients = require('../../components/v1/ingredient/listAll');
 const editIngredient = require('../../components/v1/ingredient/edit');
 
-// add ingredient data and edit ingredient data
 router.get('/list/all', listAllIngredients);
 router.post('/add', adminMiddleware.isAdmin(), joiMiddleware.joiBodyMiddleware(joiSchemas.addIngredient), addIngredient);
 router.post('/edit', adminMiddleware.isAdmin(), joiMiddleware.joiBodyMiddleware(joiSchemas.editIngredient), editIngredient);
