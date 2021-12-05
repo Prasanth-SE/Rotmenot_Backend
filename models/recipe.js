@@ -68,6 +68,9 @@ const Recipe = new Schema({
     submittedUser: {
         type: String
     },
+    rejectComment: {
+        type: String
+    },
     comments: [{
         name: String,
         comment: String

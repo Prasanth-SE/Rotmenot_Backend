@@ -14,7 +14,8 @@ module.exports = async (req, res, next) => {
         await db.Recipe.findOneAndUpdate({
             _id: body.id
         },{
-            status: "rejected"
+            status: "rejected",
+            rejectComment: body.rejectComment
         });
 
         const recipe = await db.Recipe.findOne({ _id: body.id }).populate("ingredients");
